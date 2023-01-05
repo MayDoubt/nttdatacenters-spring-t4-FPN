@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/css/table.css">
+<link rel="stylesheet" href="/css/main.css">
+<title>NTT Data Spring Taller 4</title>
+</head>
+<body>
+	<div class="login-box">
+  	<h2>Create</h2>
+		<form th:action="@{./register-success}" th:object="${client}" method="post">
+			<div class="user-box">
+				<input class="input" type="text" required="required" id="name" name="name">
+				<label>Name</label>
+			</div>
+			<div class="user-box">
+				<input class="input" type="text" required="required" id="surname" name="surname">
+				<label>Surname</label>
+			</div>
+			<div class="user-box">
+				<input class="input" type="text" required="required" id="dni" name="dni" pattern="[0-9]{8}[A-Za-z]{1}" maxlength="9">
+				<label>Dni</label>
+			</div>
+			<div class="user-box">
+				<input class="input" type="date" required="required"id="birthdate" name="birthdate">
+			</div>
+			<input class="submit" type="submit"	value="Create">
+		</form>
+	</div>
+	<div class="return-btn btn">
+		<span><a th:href="@{/}"></a></span>
+	</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<link rel="stylesheet" href="/css/table.css">
+		<link rel="stylesheet" href="/css/main.css">
+		<title>NTT Data Spring Taller 4</title>
+	</head>
+	<body>
+		<div class="login-box">
+  			<h2>Search by dni</h2>
+			<form th:action="@{./show-dni-client}" th:object="${client}" method="post">
+				<div class="user-box">
+					<input class="input" type="text" required="required" id="dni" name="dni" pattern="[0-9]{8}[A-Za-z]{1}" maxlength="9">
+					<label>Dni</label>
+				</div>
+				<input class="submit" type="submit"	value="Search">
+			</form>
+		</div>	
+		<div class="return-btn btn">
+			<span><a th:href="@{/}"></a></span>
+		</div>
+	</body>
+</html>

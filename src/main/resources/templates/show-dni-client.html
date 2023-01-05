@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<link rel="stylesheet" href="/css/table.css">
+		<link rel="stylesheet" href="/css/main.css">
+		<title>NTT Data Spring Taller 4</title>
+	</head>
+	<body>
+		<div class="result">
+			<h3>Resultado de la busqueda: <br></h3>
+			<h4 th:each="client : ${clients}">
+	        	<span th:text="${client.name}"></span> 
+	        	<span th:text="${client.surname}"></span>
+	        	<span th:text="${client.dni}"></span>
+	        	<span th:text="${client.birthdate}"></span>
+    		</h4>
+		</div>
+		<div class="return-btn btn">
+			<span><a th:href="@{/}"></a></span>
+		</div>
+	</body>
+</html>

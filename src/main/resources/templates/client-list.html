@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/css/table.css">
+<link rel="stylesheet" href="/css/main.css">
+<title>NTT Data Spring Taller 4</title>
+</head>
+<body>
+	<h2>Client list</h2>
+
+	<table class="styled-table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Surname</th>
+				<th>Dni</th>
+				<th>Birthdate</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="client : ${clients}">
+
+				<td th:text="${client.name}" id="name"></td>
+				<td th:text="${client.surname}" id="surname"></td>
+				<td th:text="${client.dni}" id="dni"></td>
+				<td th:text="${client.birthdate}" id="birthdate"></td>
+				<td><a th:href="@{'./client-deleted' + ${client.clientId}}">Delete</a>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="5" class="text-center">NTT Data Taller 4 Spring</td>
+			</tr>
+		</tfoot>
+	</table>
+	<div class="return-btn btn">
+		<span><a th:href="@{/}"></a></span>
+	</div>
+</body>
+
+
+
+
+</html>
